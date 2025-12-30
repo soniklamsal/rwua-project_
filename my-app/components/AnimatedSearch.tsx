@@ -4,23 +4,42 @@ import { useState, useRef } from 'react';
 
 interface AnimatedSearchProps {
   placeholder?: string;
+  onSearch?: (query: string) => void;
 }
 
-export default function AnimatedSearch({ placeholder = "खोज्नुहोस्..." }: AnimatedSearchProps) {
+export default function AnimatedSearch({ placeholder = "खोज्नुहोस्...", onSearch }: AnimatedSearchProps) {
   const [isActive, setIsActive] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (inputRef.current?.value.trim()) {
+    const query = inputRef.current?.value.trim() || '';
+    if (query) {
       setIsProcessing(true);
       // Simulate search processing
       setTimeout(() => {
         setIsProcessing(false);
-        // Handle search logic here
-        console.log('Searching for:', inputRef.current?.value);
-      }, 1000);
+        if (onSearch) {
+          onSearch(query);
+        }
+        console.log('Searching for:', query);
+      }, 500);
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchValue(value);
+
+    // Real-time search with debouncing
+    if (onSearch) {
+      const timeoutId = setTimeout(() => {
+        onSearch(value);
+      }, 300);
+
+      return () => clearTimeout(timeoutId);
     }
   };
 
@@ -29,7 +48,7 @@ export default function AnimatedSearch({ placeholder = "खोज्नुहो
   };
 
   const handleBlur = () => {
-    if (!inputRef.current?.value) {
+    if (!searchValue) {
       setIsActive(false);
     }
   };
@@ -49,6 +68,8 @@ export default function AnimatedSearch({ placeholder = "खोज्नुहो
                 type="text"
                 name="q"
                 placeholder={placeholder}
+                value={searchValue}
+                onChange={handleInputChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
               />
