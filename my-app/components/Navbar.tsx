@@ -184,21 +184,6 @@ export default function Navbar() {
                               Community Updates
                             </Link>
                           </li>
-                          <li>
-                            <Link href="/news/events" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Events & Activities
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/news/achievements" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Achievements
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/news/announcements" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Announcements
-                            </Link>
-                          </li>
                         </ul>
                       </div>
 
@@ -214,21 +199,6 @@ export default function Navbar() {
                           <li>
                             <Link href="/press/media-kit" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Media Kit
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/press/interviews" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Interviews
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/press/coverage" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Media Coverage
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/press/contact" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Press Contact
                             </Link>
                           </li>
                         </ul>
