@@ -5,18 +5,19 @@ import {
   MapPin,
   Phone,
   Mail,
-  ChevronRight,
   Facebook,
   Instagram,
   Twitter,
   Youtube,
-  Send,
   Heart
 } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f3f4f6] text-[#374151] py-12 px-4 sm:px-6 lg:px-20">
+    <footer className="text-[#374151] py-12 px-4 sm:px-6 lg:px-20" style={{
+      background: 'linear-gradient(135deg, rgba(243, 232, 255, 0.4) 0%, rgba(219, 234, 254, 0.4) 50%, rgba(224, 231, 255, 0.4) 100%)',
+      borderTop: '1px solid rgba(255, 255, 255, 0.2)'
+    }}>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-8 pb-8 border-b border-[#374151] border-opacity-20 md:grid-cols-2 lg:grid-cols-3">
 
@@ -113,9 +114,12 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="w-full bg-[#422673] text-white font-bold py-3 px-8 rounded-xl hover:bg-[#2563eb] transition-colors duration-300"
+                  className="inline-flex items-center justify-center w-full text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group bg-transparent border-2 border-blue-600 hover:border-blue-800 rounded-lg py-3 px-6"
                 >
                   SUBSCRIBE
+                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               </div>
             </form>
@@ -189,6 +193,10 @@ export default function Footer() {
           </Link>
         </nav>
       </div>
+
+      <style jsx>{`
+        /* Removed unused gallery button styles since we're now using styled links */
+      `}</style>
     </footer>
   );
 }
