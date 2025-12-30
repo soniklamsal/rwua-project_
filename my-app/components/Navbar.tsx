@@ -148,21 +148,21 @@ export default function Navbar() {
               >
                 Gallery
               </Link>
-              <div className="relative group">
+              <div className="relative group hover-precise">
                 <Link
                   href="/news"
-                  className="nav-link font-medium transition-colors relative flex items-center"
+                  className="nav-link font-medium transition-colors relative flex items-center px-2 py-1"
                   style={{ ...navLinkStyle, display: 'flex', alignItems: 'center' }}
                 >
                   <span>News & Press</span>
                   <ChevronDown className="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform" />
                 </Link>
 
-                {/* Invisible bridge to prevent hover gap */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-screen max-w-4xl h-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40"></div>
+                {/* Smaller, more precise hover bridge - only covers the menu item */}
+                <div className="absolute left-0 right-0 top-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40"></div>
 
                 {/* Mega Menu */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50" style={{
+                <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 w-screen max-w-4xl rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 delay-100 z-50" style={{
                   background: '#ffffff',
                   border: '1px solid rgba(0, 0, 0, 0.08)',
                   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1)'

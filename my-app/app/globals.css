@@ -68,6 +68,29 @@ body {
   visibility: visible;
   width: 100%;
 }
+
+/* Prevent accidental hover triggers */
+.group {
+  position: relative;
+}
+
+.group:hover > .nav-link {
+  color: #fff !important;
+}
+
+/* More precise hover control for mega menu */
+.hover-precise {
+  display: inline-block;
+}
+
+.hover-precise:hover .nav-link {
+  color: #fff !important;
+}
+
+.hover-precise:hover .nav-link::before {
+  visibility: visible;
+  width: 100%;
+}
 /* Logo Styles */
 .logo {
   font-size: 32px;
