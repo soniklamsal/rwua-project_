@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface AnimatedSearchProps {
   placeholder?: string;
@@ -13,34 +13,32 @@ export default function AnimatedSearch({ placeholder = "खोज्नुहो
   const [searchValue, setSearchValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Debounced search effect
+  useEffect(() => {
+    if (onSearch) {
+      const timeoutId = setTimeout(() => {
+        onSearch(searchValue);
+      }, 300);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [searchValue, onSearch]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const query = inputRef.current?.value.trim() || '';
+    const query = searchValue.trim();
     if (query) {
       setIsProcessing(true);
       // Simulate search processing
       setTimeout(() => {
         setIsProcessing(false);
-        if (onSearch) {
-          onSearch(query);
-        }
         console.log('Searching for:', query);
       }, 500);
     }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchValue(value);
-
-    // Real-time search with debouncing
-    if (onSearch) {
-      const timeoutId = setTimeout(() => {
-        onSearch(value);
-      }, 300);
-
-      return () => clearTimeout(timeoutId);
-    }
+    setSearchValue(e.target.value);
   };
 
   const handleFocus = () => {
