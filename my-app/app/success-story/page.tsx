@@ -32,13 +32,10 @@ export default function SuccessStoryPage() {
   useEffect(() => {
     let filtered = stories;
 
-    // Apply search filter
+    // Apply search filter - only search in title
     if (searchQuery.trim()) {
       filtered = filtered.filter(story =>
-        story.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        story.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        story.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
-        story.author.toLowerCase().includes(searchQuery.toLowerCase())
+        story.title.toLowerCase().startsWith(searchQuery.toLowerCase())
       );
     }
 
@@ -75,6 +72,7 @@ export default function SuccessStoryPage() {
             activeCategory={activeCategory}
             placeholder="Search success stories..."
             resultsCount={filteredStories.length}
+            pageType="stories"
           />
         </div>
 
@@ -104,10 +102,7 @@ export default function SuccessStoryPage() {
           />
         )}
 
-        {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-gray-200 text-center text-gray-600">
-          <p>© 2024 RWUA Nepal. Empowering rural communities through sustainable development.</p>
-        </footer>
+
       </div>
 
       {/* Custom Styles */}

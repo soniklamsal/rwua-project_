@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'rwua.com.np',
         port: '',
-        pathname: '/**',
+        pathname: '/wp-content/uploads/**',
       },
       {
         protocol: 'https',
@@ -16,6 +16,17 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        os: false,
+      };
+    }
+    return config;
   },
 };
 

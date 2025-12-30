@@ -20,6 +20,7 @@ export interface Vacancy {
   location: string;
   tags: string[];
   image?: string;
+  status: 'open' | 'closed';
 }
 
 // Success Stories Data
@@ -36,8 +37,8 @@ export const successStories: SuccessStory[] = [
   },
   {
     id: '2',
-    title: 'महिला सशक्तिकरणको सफल उदाहरण',
-    description: 'ग्रामीण क्षेत्रका महिलाहरूलाई आर्थिक रूपमा स्वावलम्बी बनाउने कार्यक्रमको सफल कार्यान्वयन। सीप विकास र उद्यमशीलता मार्फत महिलाहरूको जीवनस्तरमा सुधार।',
+    title: 'Women Empowerment Success Story',
+    description: 'A successful implementation of programs aimed at making rural women economically self-reliant. Improvement in women\'s living standards through skill development and entrepreneurship.',
     category: 'Women Empowerment',
     author: 'RWUA Nepal',
     image: '/images/success2.jpg',
@@ -56,8 +57,8 @@ export const successStories: SuccessStory[] = [
   },
   {
     id: '4',
-    title: 'स्वास्थ्य सेवामा सुधार',
-    description: 'ग्रामीण क्षेत्रमा आधारभूत स्वास्थ्य सेवाको पहुँच बढाउने र मातृ तथा शिशु मृत्युदर घटाउने दिशामा गरिएका कार्यहरूको सकारात्मक प्रभाव।',
+    title: 'Healthcare Service Improvement',
+    description: 'Positive impact of efforts made to increase access to basic health services in rural areas and reduce maternal and child mortality rates.',
     category: 'Health',
     author: 'RWUA Nepal',
     image: '/images/success2.jpg',
@@ -71,62 +72,79 @@ export const vacancies: Vacancy[] = [
   {
     id: '1',
     position: 'Program Manager - Community Development',
-    description: 'Lead community development initiatives in rural areas. Responsible for program planning, implementation, and monitoring. Work closely with local communities and stakeholders to ensure sustainable development outcomes.',
+    description: 'Lead community development initiatives in rural areas. Responsible for program planning, implementation, and monitoring.',
     department: 'Programs',
-    deadline: '2025-03-15',
+    deadline: '2025-06-15',
     location: 'Haripur, Nepal',
     tags: ['management', 'community', 'development', 'leadership'],
-    image: '/images/vacancy1.jpeg'
+    image: '/images/vacancy1.jpeg',
+    status: 'open'
   },
   {
     id: '2',
     position: 'Finance and Admin Coordinator',
-    description: 'Manage financial operations and administrative functions. Oversee budget planning, financial reporting, and ensure compliance with organizational policies and donor requirements.',
+    description: 'Manage financial operations and administrative functions. Oversee budget planning and financial reporting.',
     department: 'Finance',
-    deadline: '2025-03-28',
+    deadline: '2025-05-28',
     location: 'Head Office, Nepal',
     tags: ['finance', 'administration', 'budgeting', 'compliance'],
-    image: '/images/vacancy2.jpeg'
+    image: '/images/vacancy2.jpeg',
+    status: 'open'
   },
   {
     id: '3',
-    position: 'Field Officer - Women Empowerment',
-    description: 'Implement women empowerment programs at grassroots level. Facilitate training sessions, support women groups, and coordinate with local government and partner organizations.',
-    department: 'Field Operations',
-    deadline: '2025-04-10',
-    location: 'Multiple Districts',
-    tags: ['field work', 'women', 'empowerment', 'training'],
-    image: '/images/vacancy3.jpg'
+    position: 'Monitoring & Evaluation Officer',
+    description: 'Design and implement M&E frameworks for programs. Conduct regular monitoring visits and prepare evaluation reports.',
+    department: 'M&E',
+    deadline: '2025-07-20',
+    location: 'Regional Office',
+    tags: ['monitoring', 'evaluation', 'reporting', 'quality'],
+    image: '/images/vacancy1.jpeg',
+    status: 'open'
   },
   {
     id: '4',
-    position: 'Monitoring & Evaluation Officer',
-    description: 'Design and implement M&E frameworks for programs. Conduct regular monitoring visits, prepare evaluation reports, and ensure quality standards are maintained across all activities.',
-    department: 'M&E',
-    deadline: '2025-04-20',
-    location: 'Regional Office',
-    tags: ['monitoring', 'evaluation', 'reporting', 'quality'],
-    image: '/images/vacancy1.jpeg'
+    position: 'Project Coordinator - Education',
+    description: 'Coordinate education and literacy programs in rural communities. Manage project activities and liaise with schools.',
+    department: 'Programs',
+    deadline: '2025-06-25',
+    location: 'Sarlahi District',
+    tags: ['education', 'coordination', 'literacy', 'community'],
+    image: '/images/vacancy3.jpg',
+    status: 'open'
   },
   {
     id: '5',
     position: 'Communications Specialist',
-    description: 'Develop and implement communication strategies. Manage social media, create content, and coordinate with media for organizational visibility and advocacy efforts.',
+    description: 'Develop communication strategies and manage public relations. Create content for social media and publications.',
     department: 'Communications',
-    deadline: '2025-05-05',
+    deadline: '2024-12-15',
     location: 'Head Office, Nepal',
-    tags: ['communications', 'media', 'content', 'advocacy'],
-    image: '/images/vacancy2.jpeg'
+    tags: ['communications', 'social media', 'content', 'public relations'],
+    image: '/images/vacancy2.jpeg',
+    status: 'closed'
   },
   {
     id: '6',
-    position: 'Project Coordinator - Education',
-    description: 'Coordinate education and literacy programs in rural communities. Manage project activities, liaise with schools and educational institutions, and ensure program objectives are met.',
-    department: 'Programs',
-    deadline: '2025-03-25',
-    location: 'Sarlahi District',
-    tags: ['education', 'coordination', 'literacy', 'community'],
-    image: '/images/vacancy3.jpg'
+    position: 'Field Operations Manager',
+    description: 'Oversee field operations and coordinate with local communities. Manage field staff and ensure program quality.',
+    department: 'Field Operations',
+    deadline: '2024-11-30',
+    location: 'Multiple Districts',
+    tags: ['field operations', 'management', 'community', 'coordination'],
+    image: '/images/vacancy1.jpeg',
+    status: 'closed'
+  },
+  {
+    id: '7',
+    position: 'Senior Finance Officer',
+    description: 'Handle complex financial transactions and donor reporting. Ensure compliance with financial regulations.',
+    department: 'Finance',
+    deadline: '2024-10-20',
+    location: 'Head Office, Nepal',
+    tags: ['finance', 'donor reporting', 'compliance', 'senior level'],
+    image: '/images/vacancy3.jpg',
+    status: 'closed'
   }
 ];
 
@@ -141,6 +159,8 @@ export const storyCategories = [
 
 export const vacancyDepartments = [
   'All',
+  'Open Positions',
+  'Closed Positions',
   'Programs',
   'Finance',
   'Field Operations',
