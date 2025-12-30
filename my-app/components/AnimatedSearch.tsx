@@ -82,6 +82,7 @@ export default function AnimatedSearch({ placeholder = "खोज्नुहो
           margin: 0;
           color: #292929;
           width: 100%;
+          max-width: 28rem;
           display: flex;
           justify-content: center;
           align-items: center;

@@ -159,72 +159,127 @@ export default function Navbar() {
                 </Link>
 
                 {/* Smaller, more precise hover bridge - only covers the menu item */}
-                <div className="absolute left-0 right-0 top-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40"></div>
+                <div className="absolute left-0 right-0 top-full h-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40"></div>
 
-                {/* Mega Menu */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 w-screen max-w-4xl rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 delay-100 z-50" style={{
-                  background: '#ffffff',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1)'
+                {/* Enhanced Mega Menu */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 mt-4 w-screen max-w-5xl rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-out delay-150 z-50" style={{
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+                  border: '1px solid rgba(0, 0, 0, 0.06)',
+                  boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 25px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.8)'
                 }}>
-                  <div className="p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Decorative top border */}
+                  <div className="h-1 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 rounded-t-xl"></div>
+
+                  <div className="p-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
                       {/* News Section */}
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">News</h3>
-                        <ul className="space-y-3">
-                          <li>
-                            <Link href="/news" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
+                      <div className="transform hover:scale-105 transition-transform duration-300">
+                        <div className="flex items-center mb-6">
+                          <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-3">
+                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                            </svg>
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-900 uppercase tracking-wide">News</h3>
+                        </div>
+                        <ul className="space-y-4">
+                          <li className="transform hover:translate-x-2 transition-transform duration-200">
+                            <Link href="/news" className="group flex items-center text-gray-700 hover:text-purple-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 transition-all duration-300 text-sm font-semibold px-4 py-3 rounded-lg border border-transparent hover:border-purple-200">
+                              <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 group-hover:bg-purple-600 transition-colors duration-200"></span>
                               Latest News
+                              <svg className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
                             </Link>
                           </li>
-                          <li>
-                            <Link href="/news/community" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
+                          <li className="transform hover:translate-x-2 transition-transform duration-200">
+                            <Link href="/news/community" className="group flex items-center text-gray-700 hover:text-purple-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 transition-all duration-300 text-sm font-semibold px-4 py-3 rounded-lg border border-transparent hover:border-purple-200">
+                              <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 group-hover:bg-blue-600 transition-colors duration-200"></span>
                               Community Updates
+                              <svg className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
                             </Link>
                           </li>
                         </ul>
                       </div>
 
                       {/* Press & Media */}
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">Press & Media</h3>
-                        <ul className="space-y-3">
-                          <li>
-                            <Link href="/press" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
+                      <div className="transform hover:scale-105 transition-transform duration-300">
+                        <div className="flex items-center mb-6">
+                          <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mr-3">
+                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                            </svg>
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-900 uppercase tracking-wide">Press & Media</h3>
+                        </div>
+                        <ul className="space-y-4">
+                          <li className="transform hover:translate-x-2 transition-transform duration-200">
+                            <Link href="/press" className="group flex items-center text-gray-700 hover:text-purple-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 text-sm font-semibold px-4 py-3 rounded-lg border border-transparent hover:border-purple-200">
+                              <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 group-hover:bg-purple-600 transition-colors duration-200"></span>
                               Press Releases
+                              <svg className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
                             </Link>
                           </li>
-                          <li>
-                            <Link href="/press/media-kit" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
+                          <li className="transform hover:translate-x-2 transition-transform duration-200">
+                            <Link href="/press/media-kit" className="group flex items-center text-gray-700 hover:text-purple-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 transition-all duration-300 text-sm font-semibold px-4 py-3 rounded-lg border border-transparent hover:border-purple-200">
+                              <span className="w-2 h-2 bg-pink-400 rounded-full mr-3 group-hover:bg-pink-600 transition-colors duration-200"></span>
                               Media Kit
+                              <svg className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
                             </Link>
                           </li>
                         </ul>
                       </div>
                     </div>
 
-                    {/* Bottom Section with Featured Content */}
-                    <div className="mt-8 pt-6 border-t border-gray-200">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-lg hover:bg-gray-50 transition-all duration-200 cursor-pointer" style={{
-                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
-                        }}>
-                          <h4 className="font-bold text-gray-900 mb-2">Latest Update</h4>
-                          <p className="text-sm text-gray-700 mb-2 font-medium">ग्रामीण नारी उत्थान संघको नवीनतम गतिविधिहरू</p>
-                          <Link href="/news/latest" className="text-purple-700 hover:text-purple-800 hover:underline text-sm font-bold">
-                            Read More →
-                          </Link>
+                    {/* Enhanced Bottom Section with Featured Content */}
+                    <div className="mt-10 pt-8 border-t border-gray-200">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="group bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer overflow-hidden relative">
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full -mr-10 -mt-10 opacity-10"></div>
+                          <div className="relative z-10">
+                            <div className="flex items-center mb-3">
+                              <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-md flex items-center justify-center mr-2">
+                                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                              </div>
+                              <h4 className="font-bold text-gray-900 text-lg">Latest Update</h4>
+                            </div>
+                            <p className="text-sm text-gray-700 mb-4 font-medium leading-relaxed">ग्रामीण नारी उत्थान संघको नवीनतम गतिविधिहरू र सामुदायिक कार्यक्रमहरू</p>
+                            <Link href="/news/latest" className="inline-flex items-center text-purple-700 hover:text-purple-800 font-bold text-sm group-hover:translate-x-1 transition-transform duration-200">
+                              Read More
+                              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </Link>
+                          </div>
                         </div>
-                        <div className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-lg hover:bg-gray-50 transition-all duration-200 cursor-pointer" style={{
-                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
-                        }}>
-                          <h4 className="font-bold text-gray-900 mb-2">Success Stories</h4>
-                          <p className="text-sm text-gray-700 mb-2 font-medium">सफलताका कथाहरू र उपलब्धिहरू</p>
-                          <Link href="/success-story" className="text-purple-700 hover:text-purple-800 hover:underline text-sm font-bold">
-                            View Stories →
-                          </Link>
+                        <div className="group bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer overflow-hidden relative">
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full -mr-10 -mt-10 opacity-10"></div>
+                          <div className="relative z-10">
+                            <div className="flex items-center mb-3">
+                              <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-md flex items-center justify-center mr-2">
+                                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                              </div>
+                              <h4 className="font-bold text-gray-900 text-lg">Success Stories</h4>
+                            </div>
+                            <p className="text-sm text-gray-700 mb-4 font-medium leading-relaxed">सफलताका कथाहरू र समुदायिक उपलब्धिहरूको विवरण</p>
+                            <Link href="/success-story" className="inline-flex items-center text-purple-700 hover:text-purple-800 font-bold text-sm group-hover:translate-x-1 transition-transform duration-200">
+                              View Stories
+                              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -146,7 +146,9 @@ export default function NewsPressPage() {
                 />
                 <span className="text-green-700 text-sm hidden md:block mt-4">{featuredArticle.category}</span>
                 <h1 className="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight cursor-pointer hover:text-blue-800 transition-colors duration-200">
-                  {featuredArticle.title}
+                  <Link href="/article" className="hover:text-blue-800 transition-colors duration-200">
+                    {featuredArticle.title}
+                  </Link>
                 </h1>
                 <p className="text-gray-600 mb-4">
                   {featuredArticle.excerpt}
@@ -178,7 +180,9 @@ export default function NewsPressPage() {
                     }}>
                       <span className="text-green-700 text-sm hidden md:block">{post.category}</span>
                       <div className="md:mt-0 text-gray-800 font-semibold text-xl mb-2 cursor-pointer hover:text-blue-800 transition-colors duration-200">
-                        {post.title}
+                        <Link href="/article" className="hover:text-blue-800 transition-colors duration-200">
+                          {post.title}
+                        </Link>
                       </div>
                       <p className="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
                         {post.excerpt}
@@ -194,7 +198,11 @@ export default function NewsPressPage() {
           {latestNews.length > 0 && (
             <>
               <div className="flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between">
-                <h2 className="font-bold text-3xl text-gray-800">Latest News</h2>
+                <h2 className="font-bold text-3xl text-gray-800 cursor-pointer hover:text-blue-800 transition-colors duration-200">
+                  <Link href="/news" className="hover:text-blue-800 transition-colors duration-200">
+                    Latest News
+                  </Link>
+                </h2>
                 <Link href="/news" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group bg-transparent border-2 border-blue-600 hover:border-blue-800 rounded-lg py-2 px-4">
                   View all
                   <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -221,7 +229,9 @@ export default function NewsPressPage() {
                       </div>
                       <div className="p-4 flex-1 flex flex-col bg-white">
                         <h2 className="font-bold text-xl text-gray-800 mb-2 line-clamp-2 hover:text-blue-800 transition-colors duration-200 cursor-pointer">
-                          {news.title}
+                          <Link href="/article" className="hover:text-blue-800 transition-colors duration-200">
+                            {news.title}
+                          </Link>
                         </h2>
                         <p className="text-gray-600 text-sm flex-1 line-clamp-3">
                           {news.excerpt}
@@ -282,7 +292,11 @@ export default function NewsPressPage() {
           {popularNews.length > 0 && (
             <>
               <div className="flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between">
-                <h2 className="font-bold text-3xl text-gray-800">Popular News</h2>
+                <h2 className="font-bold text-3xl text-gray-800 cursor-pointer hover:text-blue-800 transition-colors duration-200">
+                  <Link href="/news" className="hover:text-blue-800 transition-colors duration-200">
+                    Popular News
+                  </Link>
+                </h2>
                 <Link href="/news" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group bg-transparent border-2 border-blue-600 hover:border-blue-800 rounded-lg py-2 px-4">
                   View all
                   <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -310,7 +324,9 @@ export default function NewsPressPage() {
                       </div>
                       <div className="p-4 flex-1 flex flex-col bg-white">
                         <h2 className="font-bold text-xl text-gray-800 mb-2 line-clamp-2 hover:text-blue-800 transition-colors duration-200 cursor-pointer">
-                          {news.title}
+                          <Link href="/article" className="hover:text-blue-800 transition-colors duration-200">
+                            {news.title}
+                          </Link>
                         </h2>
                         <p className="text-gray-600 text-sm flex-1 line-clamp-3">
                           {news.excerpt}
