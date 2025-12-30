@@ -12,7 +12,8 @@ const navLinkStyle = {
   transition: '0.3s',
   fontSize: '14px',
   padding: '0 3px',
-  fontFamily: '"Open Sans", sans-serif'
+  fontFamily: '"Open Sans", sans-serif',
+  cursor: 'pointer'
 };
 
 const middleLinkStyle = {
@@ -22,7 +23,8 @@ const middleLinkStyle = {
   transition: '0.3s',
   fontSize: '14px',
   padding: '0 3px',
-  fontFamily: '"Open Sans", sans-serif'
+  fontFamily: '"Open Sans", sans-serif',
+  cursor: 'pointer'
 };
 
 export default function Navbar() {
@@ -48,12 +50,12 @@ export default function Navbar() {
         <div className="mx-auto px-4" style={{ maxWidth: '1160px' }}>
           <div className="flex items-center justify-between h-10">
             <div className="flex items-center gap-2 sm:gap-6">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
                 <span className="hidden sm:inline">✉</span>
                 <span className="text-xs sm:text-sm">rwua.haripur@rwua.org</span>
               </div>
-              <div className="hidden sm:block">☎ 046-411109</div>
-              <div className="hidden md:block">Sun-Fri 10am – 5pm</div>
+              <div className="hidden sm:block cursor-pointer hover:text-white transition-colors">☎ 046-411109</div>
+              <div className="hidden md:block cursor-pointer hover:text-white transition-colors">Sun-Fri 10am – 5pm</div>
             </div>
             <a
               href="tel:046-411109"
@@ -156,37 +158,44 @@ export default function Navbar() {
                   <ChevronDown className="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform" />
                 </Link>
 
+                {/* Invisible bridge to prevent hover gap */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-screen max-w-4xl h-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40"></div>
+
                 {/* Mega Menu */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-screen max-w-4xl rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50" style={{
+                  background: '#ffffff',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1)'
+                }}>
                   <div className="p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                       {/* News Section */}
                       <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-4 uppercase tracking-wide">News</h3>
+                        <h3 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">News</h3>
                         <ul className="space-y-3">
                           <li>
-                            <Link href="/news" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/news" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Latest News
                             </Link>
                           </li>
                           <li>
-                            <Link href="/news/community" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/news/community" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Community Updates
                             </Link>
                           </li>
                           <li>
-                            <Link href="/news/events" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/news/events" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Events & Activities
                             </Link>
                           </li>
                           <li>
-                            <Link href="/news/achievements" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/news/achievements" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Achievements
                             </Link>
                           </li>
                           <li>
-                            <Link href="/news/announcements" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/news/announcements" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Announcements
                             </Link>
                           </li>
@@ -195,63 +204,31 @@ export default function Navbar() {
 
                       {/* Press & Media */}
                       <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-4 uppercase tracking-wide">Press & Media</h3>
+                        <h3 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">Press & Media</h3>
                         <ul className="space-y-3">
                           <li>
-                            <Link href="/press" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/press" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Press Releases
                             </Link>
                           </li>
                           <li>
-                            <Link href="/press/media-kit" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/press/media-kit" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Media Kit
                             </Link>
                           </li>
                           <li>
-                            <Link href="/press/interviews" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/press/interviews" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Interviews
                             </Link>
                           </li>
                           <li>
-                            <Link href="/press/coverage" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/press/coverage" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Media Coverage
                             </Link>
                           </li>
                           <li>
-                            <Link href="/press/contact" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
+                            <Link href="/press/contact" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
                               Press Contact
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-
-                      {/* Resources */}
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-4 uppercase tracking-wide">Resources</h3>
-                        <ul className="space-y-3">
-                          <li>
-                            <Link href="/resources/reports" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
-                              Annual Reports
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/resources/publications" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
-                              Publications
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/resources/newsletters" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
-                              Newsletters
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/resources/documents" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
-                              Documents
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/resources/archive" className="text-gray-600 hover:text-purple-600 transition-colors text-sm">
-                              Archive
                             </Link>
                           </li>
                         </ul>
@@ -261,17 +238,21 @@ export default function Navbar() {
                     {/* Bottom Section with Featured Content */}
                     <div className="mt-8 pt-6 border-t border-gray-200">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-semibold text-gray-800 mb-2">Latest Update</h4>
-                          <p className="text-sm text-gray-600 mb-2">ग्रामीण नारी उत्थान संघको नवीनतम गतिविधिहरू</p>
-                          <Link href="/news/latest" className="text-purple-600 hover:text-purple-700 text-sm font-medium">
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-lg hover:bg-gray-50 transition-all duration-200 cursor-pointer" style={{
+                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
+                        }}>
+                          <h4 className="font-bold text-gray-900 mb-2">Latest Update</h4>
+                          <p className="text-sm text-gray-700 mb-2 font-medium">ग्रामीण नारी उत्थान संघको नवीनतम गतिविधिहरू</p>
+                          <Link href="/news/latest" className="text-purple-700 hover:text-purple-800 hover:underline text-sm font-bold">
                             Read More →
                           </Link>
                         </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-semibold text-gray-800 mb-2">Success Stories</h4>
-                          <p className="text-sm text-gray-600 mb-2">सफलताका कथाहरू र उपलब्धिहरू</p>
-                          <Link href="/success-story" className="text-purple-600 hover:text-purple-700 text-sm font-medium">
+                        <div className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-lg hover:bg-gray-50 transition-all duration-200 cursor-pointer" style={{
+                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
+                        }}>
+                          <h4 className="font-bold text-gray-900 mb-2">Success Stories</h4>
+                          <p className="text-sm text-gray-700 mb-2 font-medium">सफलताका कथाहरू र उपलब्धिहरू</p>
+                          <Link href="/success-story" className="text-purple-700 hover:text-purple-800 hover:underline text-sm font-bold">
                             View Stories →
                           </Link>
                         </div>
