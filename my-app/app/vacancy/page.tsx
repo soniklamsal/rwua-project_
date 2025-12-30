@@ -32,19 +32,24 @@ export default function VacancyPage() {
   useEffect(() => {
     let filtered = allVacancies;
 
-    // Apply search filter
+    // Apply search filter - only search in title
     if (searchQuery.trim()) {
       filtered = filtered.filter(vacancy =>
-        vacancy.position.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        vacancy.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        vacancy.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
-        vacancy.location.toLowerCase().includes(searchQuery.toLowerCase())
+        vacancy.position.toLowerCase().startsWith(searchQuery.toLowerCase())
       );
     }
 
     // Apply department filter
     if (activeCategory !== 'All') {
-      filtered = filtered.filter(vacancy => vacancy.department === activeCategory);
+      if (activeCategory === 'Open Positions') {
+        // Filter for open positions only
+        filtered = filtered.filter(vacancy => vacancy.status === 'open');
+      } else if (activeCategory === 'Closed Positions') {
+        // Filter for closed positions only
+        filtered = filtered.filter(vacancy => vacancy.status === 'closed');
+      } else {
+        filtered = filtered.filter(vacancy => vacancy.department === activeCategory);
+      }
     }
 
     setFilteredVacancies(filtered);
@@ -75,6 +80,7 @@ export default function VacancyPage() {
             activeCategory={activeCategory}
             placeholder="Search job opportunities..."
             resultsCount={filteredVacancies.length}
+            pageType="vacancies"
           />
         </div>
 
@@ -104,10 +110,7 @@ export default function VacancyPage() {
           />
         )}
 
-        {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-gray-200 text-center text-gray-600">
-          <p>© 2024 RWUA Nepal. Join us in empowering rural communities through sustainable development.</p>
-        </footer>
+
       </div>
 
       {/* Custom Styles */}

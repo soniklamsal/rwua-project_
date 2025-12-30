@@ -12,8 +12,7 @@ const navLinkStyle = {
   transition: '0.3s',
   fontSize: '14px',
   padding: '0 3px',
-  fontFamily: '"Open Sans", sans-serif',
-  cursor: 'pointer'
+  fontFamily: '"Open Sans", sans-serif'
 };
 
 const middleLinkStyle = {
@@ -23,8 +22,7 @@ const middleLinkStyle = {
   transition: '0.3s',
   fontSize: '14px',
   padding: '0 3px',
-  fontFamily: '"Open Sans", sans-serif',
-  cursor: 'pointer'
+  fontFamily: '"Open Sans", sans-serif'
 };
 
 export default function Navbar() {
@@ -50,12 +48,12 @@ export default function Navbar() {
         <div className="mx-auto px-4" style={{ maxWidth: '1160px' }}>
           <div className="flex items-center justify-between h-10">
             <div className="flex items-center gap-2 sm:gap-6">
-              <div className="flex items-center gap-2 cursor-pointer hover:text-white transition-colors">
+              <div className="flex items-center gap-2">
                 <span className="hidden sm:inline">✉</span>
                 <span className="text-xs sm:text-sm">rwua.haripur@rwua.org</span>
               </div>
-              <div className="hidden sm:block cursor-pointer hover:text-white transition-colors">☎ 046-411109</div>
-              <div className="hidden md:block cursor-pointer hover:text-white transition-colors">Sun-Fri 10am – 5pm</div>
+              <div className="hidden sm:block">☎ 046-411109</div>
+              <div className="hidden md:block">Sun-Fri 10am – 5pm</div>
             </div>
             <a
               href="tel:046-411109"
@@ -148,117 +146,22 @@ export default function Navbar() {
               >
                 Gallery
               </Link>
-              <div className="relative group hover-precise">
-                <Link
-                  href="/news"
-                  className="nav-link font-medium transition-colors relative flex items-center px-2 py-1"
+              <div className="relative group">
+                <button
+                  className="nav-link font-medium transition-colors relative flex items-center"
                   style={{ ...navLinkStyle, display: 'flex', alignItems: 'center' }}
                 >
                   <span>News & Press</span>
-                  <ChevronDown className="w-3 h-3 ml-1 transform group-hover:rotate-180 transition-transform" />
-                </Link>
-
-                {/* Smaller, more precise hover bridge - only covers the menu item */}
-                <div className="absolute left-0 right-0 top-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40"></div>
-
-                {/* Mega Menu */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-1 w-screen max-w-4xl rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 delay-100 z-50" style={{
-                  background: '#ffffff',
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15), 0 4px 16px rgba(0, 0, 0, 0.1)'
-                }}>
-                  <div className="p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                      {/* News Section */}
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">News</h3>
-                        <ul className="space-y-3">
-                          <li>
-                            <Link href="/news" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Latest News
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/news/community" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Community Updates
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/news/events" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Events & Activities
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/news/achievements" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Achievements
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/news/announcements" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Announcements
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-
-                      {/* Press & Media */}
-                      <div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">Press & Media</h3>
-                        <ul className="space-y-3">
-                          <li>
-                            <Link href="/press" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Press Releases
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/press/media-kit" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Media Kit
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/press/interviews" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Interviews
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/press/coverage" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Media Coverage
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/press/contact" className="text-gray-800 hover:text-purple-700 hover:bg-gray-100 transition-all duration-200 text-sm font-bold block px-3 py-2 rounded-md">
-                              Press Contact
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    {/* Bottom Section with Featured Content */}
-                    <div className="mt-8 pt-6 border-t border-gray-200">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-lg hover:bg-gray-50 transition-all duration-200 cursor-pointer" style={{
-                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
-                        }}>
-                          <h4 className="font-bold text-gray-900 mb-2">Latest Update</h4>
-                          <p className="text-sm text-gray-700 mb-2 font-medium">ग्रामीण नारी उत्थान संघको नवीनतम गतिविधिहरू</p>
-                          <Link href="/news/latest" className="text-purple-700 hover:text-purple-800 hover:underline text-sm font-bold">
-                            Read More →
-                          </Link>
-                        </div>
-                        <div className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-lg hover:bg-gray-50 transition-all duration-200 cursor-pointer" style={{
-                          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
-                        }}>
-                          <h4 className="font-bold text-gray-900 mb-2">Success Stories</h4>
-                          <p className="text-sm text-gray-700 mb-2 font-medium">सफलताका कथाहरू र उपलब्धिहरू</p>
-                          <Link href="/success-story" className="text-purple-700 hover:text-purple-800 hover:underline text-sm font-bold">
-                            View Stories →
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <ChevronDown className="w-3 h-3 ml-1 transform rotate-180" />
+                </button>
+                {/* Dropdown - adjust links as needed */}
+                <div className="absolute left-0 mt-2 w-48 bg-purple-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <Link href="/news" className="block px-4 py-2 hover:bg-purple-700">
+                    News
+                  </Link>
+                  <Link href="/press" className="block px-4 py-2 hover:bg-purple-700">
+                    Press Releases
+                  </Link>
                 </div>
               </div>
               <Link
