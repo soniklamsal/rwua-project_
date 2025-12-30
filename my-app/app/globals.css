@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Navigation Menu Styles */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #f6b024;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+}
+
+.nav-link:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+/* Logo Styles */
+.logo {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo img {
+  max-height: 160px;
+  position: absolute;
+  top: 0;
+  z-index: 1200;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+/* Middle Navigation Menu Styles */
+.middle-nav-link {
+  position: relative;
+}
+
+.middle-nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #dc3545;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.middle-nav-link:hover {
+  color: #dc3545 !important;
+}
+
+.middle-nav-link:hover::before {
+  visibility: visible;
+  width: 100%;
+}
