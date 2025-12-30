@@ -294,3 +294,129 @@ select:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Navigation Menu Styles */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #f6b024;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link:hover,
+.group:hover .nav-link {
+  color: #fff !important;
+}
+
+.nav-link:hover::before,
+.group:hover .nav-link::before {
+  visibility: visible;
+  width: 100%;
+}
+
+/* Prevent accidental hover triggers */
+.group {
+  position: relative;
+}
+
+.group:hover > .nav-link {
+  color: #fff !important;
+}
+
+/* More precise hover control for mega menu */
+.hover-precise {
+  display: inline-block;
+}
+
+.hover-precise:hover .nav-link {
+  color: #fff !important;
+}
+
+.hover-precise:hover .nav-link::before {
+  visibility: visible;
+  width: 100%;
+}
+
+/* Middle Navigation Menu Styles */
+.middle-nav-link {
+  position: relative;
+}
+
+.middle-nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #dc3545;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.middle-nav-link:hover {
+  color: #dc3545 !important;
+}
+
+.middle-nav-link:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
+/* Logo Styles */
+.logo {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo img {
+  max-height: 160px;
+  position: absolute;
+  top: 0;
+  z-index: 1200;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}

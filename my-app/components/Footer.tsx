@@ -23,8 +23,6 @@ export default function Footer() {
 
           {/* Contact/Access Section */}
           <div className="text-white">
-            <h3 className="mb-4 text-xl font-bold text-white">Contact/Access</h3>
-
             {/* Logo */}
             <div className="flex-shrink-0 mb-4">
               <Link href="/" className="flex items-center">
