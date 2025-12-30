@@ -18,6 +18,10 @@
   --rwua-neutral-600: #4b5563;
   --rwua-neutral-700: #374151;
   --rwua-neutral-800: #1f2937;
+  
+  /* Next.js default variables */
+  --background: #ffffff;
+  --foreground: #171717;
   --rwua-neutral-900: #111827;
   
   /* Background and foreground */
