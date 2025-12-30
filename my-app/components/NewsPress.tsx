@@ -3,13 +3,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Home, User, Calendar, Folder, Tag } from 'lucide-react';
-import SaveTheChildrenSidebar from './SaveTheChildrenSidebar';
+import TopSearch from './TopSearch';
 
 export default function NewsPressPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{
+      backgroundColor: '#ffffff'
+    }}>
       {/* Breadcrumb Section */}
-      <section className="py-4 px-0 bg-[#ecf6fe] pt-[15px]">
+      <section className="py-4 px-0 pt-[15px]" style={{
+        backgroundColor: '#ffffff',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.1)'
+      }}>
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-end">
             <nav className="flex items-center text-sm text-gray-600 font-sans">
@@ -18,189 +23,422 @@ export default function NewsPressPage() {
                 मुख्य पृष्ठ
               </Link>
               <span className="mx-2">/</span>
-              <span className="text-gray-600 font-medium">Save The Children</span>
+              <span className="text-gray-600 font-medium">News & Press</span>
             </nav>
           </div>
         </div>
       </section>
 
       {/* Main Content Section */}
-      <section className="py-16 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Main Content - Left Column */}
-            <div className="flex-1">
-              <div className="space-y-8">
+      <div className="max-w-screen-lg mx-auto px-4">
+        {/* Search Section */}
+        <TopSearch />
 
-                {/* Card 1 */}
-                <article className="p-5 mb-16 overflow-hidden bg-white shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
-                  <div className="mb-5">
-                    <Image
-                      src="https://rwua.com.np/wp-content/uploads/2025/12/blimket-780x470-1.png"
-                      alt="हरिपुरका बिपन्न घरपरिवारलाई न्यानो कम्बल वितरण कार्यक्रम"
-                      width={780}
-                      height={470}
-                      className="max-w-full h-auto align-middle border-0 block"
-                    />
+        <main className="mt-12">
+          {/* Featured Section */}
+          <div className="flex flex-wrap md:flex-nowrap space-x-0 md:space-x-6 mb-16">
+            {/* Main Post */}
+            <div className="mb-4 lg:mb-0 p-4 lg:p-0 w-full md:w-4/7 relative rounded block cursor-pointer">
+              <Image
+                src="https://rwua.com.np/wp-content/uploads/2025/12/blimket-780x470-1.png"
+                alt="हरिपुरका बिपन्न घरपरिवारलाई न्यानो कम्बल वितरण"
+                width={900}
+                height={400}
+                className="rounded-md object-cover w-full h-64 hover:scale-105 transition-transform duration-300"
+              />
+              <span className="text-green-700 text-sm hidden md:block mt-4">Community Support</span>
+              <h1 className="text-gray-800 text-4xl font-bold mt-2 mb-2 leading-tight cursor-pointer hover:text-blue-800 transition-colors duration-200">
+                हरिपुरका बिपन्न घरपरिवारलाई न्यानो कम्बल वितरण कार्यक्रम
+              </h1>
+              <p className="text-gray-600 mb-4">
+                सर्लाहीको हरिपुर नगरपालिकामा सिमान्तकृत दलित तथा मुसहर समुदायलाई लक्षित गरी न्यानो कम्बल वितरण कार्यक्रम सम्पन्न भएको छ।
+                शुक्रबार ग्रामीण नारी उत्थान संघ, हरिपुर–२ सर्लाहीको आयोजना तथा सेभ द चिल्ड्रेनको आर्थिक सहयोग एवम् हरिपुर नगरपालिकासँगको सहकार्य र समन्वयमा
+                हरिपुर नगरपालिका वडा नं. १, २, ४, ५, ७, ८ र ९ का सिमान्तकृत दलित तथा मुसहर समुदायका ४४२ घरधुरीलाई जम्मा ५७६ थान न्यानो कम्बल वितरण गरिएको हो।
+              </p>
+              <Link href="/article" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm mt-4 transition-colors duration-200 group">
+                Read more
+                <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+
+            {/* Sub-main Posts */}
+            <div className="w-full md:w-4/7">
+              {/* Post 1 */}
+              <div className="rounded w-full flex flex-col md:flex-row mb-10 cursor-pointer hover:shadow-lg transition-all duration-300">
+                <Image
+                  src="https://rwua.com.np/wp-content/uploads/2025/02/shared-image.jpeg"
+                  alt="बालक्लब गठन"
+                  width={300}
+                  height={200}
+                  className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 hover:scale-105 transition-transform duration-300"
+                />
+                <div className="rounded px-4 hover:shadow-lg transition-all duration-300" style={{
+                  background: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+                }}>
+                  <span className="text-green-700 text-sm hidden md:block">Child Rights</span>
+                  <div className="md:mt-0 text-gray-800 font-semibold text-xl mb-2 cursor-pointer hover:text-blue-800 transition-colors duration-200">
+                    बालक्लब गठन तथा बालबालिकाको अधिकार बिषयमा छलफल
                   </div>
+                  <p className="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
+                    सर्लाहीमा विद्यालयको पहुँचमा पुग्न नसकेका २० जना अपाङ्ग बालबालिकालाई घरमै शिक्षा प्रदान हुने भएको छ।
+                  </p>
+                </div>
+              </div>
 
-                  <div>
-                    <h2 className="text-[32px] leading-[38px] font-bold p-0 m-0 mb-5 font-sans">
-                      <Link href="#" className="transition-all duration-300 no-underline text-[#422673]">
-                        हरिपुरका बिपन्न घरपरिवारलाई न्यानो कम्बल वितरण कार्यक्रम ४४२ घरधुरीलाई कम्बल वितरण
-                      </Link>
-                    </h2>
-
-                    {/* Meta Info */}
-                    <div className="flex items-center gap-4 mb-[15px] text-sm font-sans text-[#2b99f8]">
-                      <div className="flex items-center gap-1">
-                        <User className="w-4 h-4" />
-                        <span className="uppercase">RWUA NEPAL</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>December 27, 2025</span>
-                      </div>
-                    </div>
-
-                    <p className="text-base text-[#444444] leading-7 mb-5 font-sans">
-                      सर्लाहीको हरिपुर नगरपालिकामा सिमान्तकृत दलित तथा मुसहर समुदायलाई लक्षित गरी न्यानो कम्बल वितरण कार्यक्रम सम्पन्न भएको छ। शुक्रबार ग्रामीण नारी उत्थान संघ, हरिपुर–२ सर्लाहीको आयोजना तथा सेभ द चिल्ड्रेनको आर्थिक सहयोग एवम् हरिपुर नगरपालिकासँगको सहकार्य र समन्वयमा हरिपुर नगरपालिका वडा नं. १, २, ४, ५, ७, ८ र ९ का सिमान्तकृत दलित तथा मुसहर समुदायका ४४२ घरधुरीलाई जम्मा ५७६ थान न्यानो कम्बल वितरण गरिएको हो।
-
-                      कार्यक्रम ग्रामीण नारी उत्थान संघकी अध्यक्ष गोमा देवी न्यौपानेको अध्यक्षता तथा हरिपुर नगरपालिकाकी उप–प्रमुख निलम राय यादवको प्रमुख आतिथ्यतामा सम्पन्न भएको थियो। कार्यक्रममा संस्थाका उपाध्यक्ष, सचिव, सदस्यहरू, कर्मचारीहरू तथा इलाका प्रहरी कार्यालय हरिपुरका प्रतिनिधिहरूको उपस्थिति रहेको थियो। न्यानो कम्बल वितरण कार्यक्रम विशेष गरी हरिपुर नगरपालिकाभित्र रहेका मुसहर तथा दलित समुदायका बस्तीहरूलाई केन्द्रमा राखी सञ्चालन गरिएको हो। जाडोयाममा अत्यन्तै आवश्यक न्यानो राहत उपलब्ध गराउने उद्देश्यले कार्यक्रम आयोजना गरिएको आयोजक संस्थाले जनाएको छ।
-
-                      कार्यक्रमलाई सम्बोधन गर्दै नगर उप–प्रमुख निलम राय यादवले यस किसिमका सहयोगी कार्यक्रमले सिमान्तकृत समुदायलाई राहत पुग्ने विश्वास व्यक्त गर्दै अभिभावकहरूलाई आफ्ना बालबालिकाको शिक्षा, स्वास्थ्य र सुरक्षाप्रति विशेष ध्यान दिन आग्रह गर्नुभयो। उहाँले जिम्मेवार अभिभावकत्व निर्वाह गर्न सबैमा अपिल समेत गर्नुभयो। ग्रामीण नारी उत्थान संघकी अध्यक्ष न्यौपानेले संस्थाले विगतका वर्षहरूमा झैं यस वर्ष पनि सिमान्तकृत दलित, मुसहर तथा अल्पसंख्यक समुदायका बालबालिका, अपांगता भएका व्यक्ति, गर्भवती तथा सुत्केरी महिला र ज्येष्ठ नागरिकलाई केन्द्रमा राखेर न्यानो कम्बल वितरण कार्यक्रमलाई निरन्तरता दिएको बताउनुभयो।
-
-                      उहाँले यो कार्यक्रम कम्बल वितरणमा मात्र सीमित नभई समुदायमा रहेका बालबालिका, अपांगता भएका व्यक्ति तथा गर्भवती र सुत्केरी आमाहरूको स्याहार, सुरक्षा, व्यक्तिगत सरसफाइ, स्वास्थ्य सचेतना तथा बालबालिकाको विद्यालय पहुँच अभिवृद्धिमा समेत केन्द्रित रहेको जानकारी दिनुभयो। कार्यक्रममा गर्भवती तथा सुत्केरी महिला, शारीरिक अशक्त तथा अपांगता भएका व्यक्ति र ज्येष्ठ नागरिकलाई पहिलो प्राथमिकतामा राखी कम्बल वितरण गरिएको थियो। यसका लागि आवश्यक तथ्यांक संकलन गरी वडा तथा स्थानीय तहबाट प्रमाणित गराई जिल्ला विपद् व्यवस्थापन समितिको अनुमति लिई संस्थाको प्राङ्गणमा कार्यक्रम सम्पन्न गरिएको छ।
-                    </p>
-
-                    {/* Horizontal Line */}
-                    <hr className="border-t border-gray-300 mb-4" />
-
-                    {/* Footer with folder and tag icons */}
-                    <div className="flex items-center gap-2 text-sm text-gray-500 font-sans">
-                      <div className="flex items-center gap-1">
-                        <Folder className="w-4 h-4" />
-                        <Link href="#" className="no-underline text-[#422673]">Community Support</Link>
-                      </div>
-                      <div className="flex items-center gap-1 ml-3">
-                        <Tag className="w-4 h-4" />
-                      </div>
-                    </div>
+              {/* Post 2 */}
+              <div className="rounded w-full flex flex-col md:flex-row mb-10 cursor-pointer hover:shadow-lg transition-all duration-300">
+                <Image
+                  src="https://rwua.com.np/wp-content/uploads/2020/01/13.jpg"
+                  alt="न्यानो कम्मल बितरण"
+                  width={300}
+                  height={200}
+                  className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 hover:scale-105 transition-transform duration-300"
+                />
+                <div className="rounded px-4 hover:shadow-lg transition-all duration-300" style={{
+                  background: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+                }}>
+                  <span className="text-green-700 text-sm hidden md:block">Winter Relief</span>
+                  <div className="md:mt-0 text-gray-800 font-semibold text-xl mb-2 cursor-pointer hover:text-blue-800 transition-colors duration-200">
+                    न्यानो कम्मल बितरण कार्यक्रम
                   </div>
-                </article>
+                  <p className="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
+                    Save The Children संस्थाको सहयोगमा न्यानो कम्बल वितरण कार्यक्रम सम्पन्न भएको छ।
+                  </p>
+                </div>
+              </div>
 
-                {/* Card 2 */}
-                <article className="p-5 mb-16 overflow-hidden bg-white shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
-                  <div className="mb-5">
-                    <Image
-                      src="https://rwua.com.np/wp-content/uploads/2025/02/shared-image.jpeg"
-                      alt="बिहानको भेलामा पुर्न बालक्लब गठन बालबालिकाको अधिकार बिषयमा छलफल"
-                      width={780}
-                      height={470}
-                      className="max-w-full h-auto align-middle border-0 block"
-                    />
+              {/* Post 3 */}
+              <div className="rounded w-full flex flex-col md:flex-row mb-10 cursor-pointer hover:shadow-lg transition-all duration-300">
+                <Image
+                  src="https://rwua.com.np/wp-content/uploads/2021/04/11.jpg"
+                  alt="खानेपानी सुविधा"
+                  width={300}
+                  height={200}
+                  className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 hover:scale-105 transition-transform duration-300"
+                />
+                <div className="rounded px-4 hover:shadow-lg transition-all duration-300" style={{
+                  background: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+                }}>
+                  <span className="text-green-700 text-sm hidden md:block">Water & Sanitation</span>
+                  <div className="md:mt-0 text-gray-800 font-semibold text-xl mb-2 cursor-pointer hover:text-blue-800 transition-colors duration-200">
+                    समावेशी तथा दिगो ग्रामीण खानेपानी सुविधा कार्यक्रम
                   </div>
+                  <p className="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
+                    स्वच्छ खानेपानी पहुँचका लागि सञ्चालित कार्यक्रमका गतिविधिहरू।
+                  </p>
+                </div>
+              </div>
 
-                  <div>
-                    <h2 className="text-[32px] leading-[38px] font-bold p-0 m-0 mb-5 font-sans">
-                      <Link href="#" className="transition-all duration-300 no-underline text-[#422673]">
-                        बिहानको भेलामा पुर्न बालक्लब गठन बालबालिकाको अधिकार बिषयमा छलफल
-                      </Link>
-                    </h2>
-
-                    {/* Meta Info */}
-                    <div className="flex items-center gap-4 mb-[15px] text-sm font-sans text-[#2b99f8]">
-                      <div className="flex items-center gap-1">
-                        <User className="w-4 h-4" />
-                        <span className="uppercase">RWUA NEPAL</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>December 15, 2025</span>
-                      </div>
-                    </div>
-
-                    <p className="text-base text-[#444444] leading-7 mb-5 font-sans">
-                      सर्लाहीमा विद्यालयको पहुँचमा पुग्न नसकेका २० जना अपाङ्ग बालबालिकालाई घरमै शिक्षा प्रदान हुने भएको छ। सर्लाहीको हरिपुर, ईश्वरपुुर, गोडैता र बलरा नगरपालिकामा बहुअपांगता भएका बालबालिकाहरुलाई शिक्षाको अधिकार सुनिश्चित गर्नका लागि साक्षरता सहजकर्तालाई घरमै पठाएर शिक्षा प्रदान गरिने छ । सेभ द चिल्ड्रेनको आर्थिक सहयोग र ग्रामीण नारी उत्थान संघ हरिपुर तथा राष्ट्रिय रोजगार प्रर्वद्धन केन्द्र मलंगवामा संयुक्तरूपमा संचालित समुन्नति परियोजना अन्तर्गत बहुअपांगता भई विधालयको पहुँचमा जान नसक्ने बालबालिकाहरुलाई घरमै शिक्षा प्रदान गरिने छ ।
-
-                      ग्रामीण नारी उत्थान संघका कार्यक्षेत्र पर्ने हरिपुर नगरपालिकाका ३ जना र ईश्वरपुर नगरपालिकाका ७ जना र राष्ट्रिय रोजगार प्रर्वद्धन केन्द्रका कार्यक्षेत्र पर्ने बलरा र गोडैता नगरपालिका गरी १० जना अपाङ्ग बालबालिकालाई घरमै शिक्षा प्रदान गरिने ग्रामीण नारी उत्थान संघका उपाध्यक्ष विष्णुप्रसाद चालिसेले बताउनु भयो ।
-
-                      बहुअपांगता भई विधालयको पहुँचमा जान नसक्ने बालबालिकाहरुलाई घरमै शिक्षामा पहुँच पुर्याउने उधेश्यले शारीरिक अपांगता, दृश्यसम्बन्धि अपांगता, सुनाइ सम्बन्धि अपांगता, श्रवणदृष्टिविहिन अपांगता, स्वर र बोलाई सम्बन्धि अपांगता, मानसिक वा मनोसामाजिक अपांगता र बौद्विक अपांगता भएका बालबालिकाहरुलाई समेत नेपाल सरकारको संविधानमा आधारभुत शिक्षा अनिवार्य भएता पनि अझै विधालय वा कुनै श्रोत विधालयहरुमा हाल सम्म भर्ना हुन नसकेको अवस्थामा सर्लाहीमा प्रथम पटक यो अभयास गरिएको छ ।
-
-                      हरिपुरका ३ जना र ईश्वरपुरका ७ जना तथा गोडैता र बलराका १० जना साक्षरता सहजकर्तालाई घरमै विधालय सञ्चालन सम्बन्धि ५ दिने तालिम सर्लाही नयाँरोडको सीता प्यालेसमा तालिम प्रदान गरिसकेको छ । अब बालबालिकाहरुको घरमै विधालय गई नेपाल सरकारको एकिकृत पाठ्यक्रममा आधारित कक्षा १ देखि ३ सम्मको पाठ्यक्रमको आधारमा घरमै विधालय संचालन गरेर बहु अपांगता भएका बालबालिकाले सजिलै सिक्न अपांगता मैत्री वातावरणमा कक्षा संचालन गरि बालबालिकाको शिक्षामा पहुँच बढाउने ग्रामीण नारी उत्थान संघका उपाध्यक्ष चालिसेले बताउनु भयो ।सहजकर्ताहरुले ३ वर्ष सम्म निरन्तर पढाउने तथा ३ कक्षा पुुर्ण भएपछी पछी ति बालबालिकालाई अपाङ्गमैत्री विद्यालयमा जोडिने छ ।
-
-                      तालिमको सहजिकरण सेभ द चिल्ड्रेन बर्दिवासबाट राम बहादुर साह र रुवाका शम्भु साह तेलि र राम विश्वास चौधरी त्यस्तै आर आर पिकेका चन्द्रशेखर सहनी र महेश कुमार मण्डलले सहजिकरण गर्नु भएको थियो । कार्यक्रम संचालनको क्रममा हरिपुर नगरपालिकाका शिक्षा प्रमुख नागेश्वर राय द्वारा अनुगमन समेत गरिएको थियो । सो कार्यक्रममा रुवा बाट १० जना र आर आर पिके बाट १० जना गरि जम्मा २० जना सहजकर्ता सहभागिता भएको थियो । तालिमको समापन ग्रामीण नारी उत्थान संघ हरिपुरका अध्यक्ष गोमा देवी न्यौपानेले गर्नुभयो ।
-                    </p>
-
-                    {/* Horizontal Line */}
-                    <hr className="border-t border-gray-300 mb-4" />
-
-                    {/* Footer with folder and tag icons */}
-                    <div className="flex items-center gap-2 text-sm text-gray-500 font-sans">
-                      <div className="flex items-center gap-1">
-                        <Folder className="w-4 h-4" />
-                        <Link href="#" className="no-underline text-[#422673]">Child Rights</Link>
-                      </div>
-                      <div className="flex items-center gap-1 ml-3">
-                        <Tag className="w-4 h-4" />
-                      </div>
-                    </div>
+              {/* Post 4 */}
+              <div className="rounded w-full flex flex-col md:flex-row mb-10 cursor-pointer hover:shadow-lg transition-all duration-300">
+                <Image
+                  src="https://rwua.com.np/wp-content/uploads/2021/10/1.jpg"
+                  alt="साधारण सभा"
+                  width={300}
+                  height={200}
+                  className="block md:hidden lg:block rounded-md h-64 md:h-32 m-4 md:m-0 hover:scale-105 transition-transform duration-300"
+                />
+                <div className="rounded px-4 hover:shadow-lg transition-all duration-300" style={{
+                  background: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)'
+                }}>
+                  <span className="text-green-700 text-sm hidden md:block">General Assembly</span>
+                  <div className="md:mt-0 text-gray-800 font-semibold text-xl mb-2 cursor-pointer hover:text-blue-800 transition-colors duration-200">
+                    ग्रामिण नारी उत्थान संघको २९ औं साधारण सभा
                   </div>
-                </article>
-
-                {/* Card 3 */}
-                <article className="p-5 mb-16 overflow-hidden bg-white shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
-                  <div className="mb-5">
-                    <Image
-                      src="https://rwua.com.np/wp-content/uploads/2020/01/13.jpg"
-                      alt="न्यानो कम्मल बितरण"
-                      width={780}
-                      height={470}
-                      className="max-w-full h-auto align-middle border-0 block"
-                    />
-                  </div>
-
-                  <div>
-                    <h2 className="text-[32px] leading-[38px] font-bold p-0 m-0 mb-5 font-sans">
-                      <Link href="#" className="transition-all duration-300 no-underline text-[#422673]">
-                        न्यानो कम्मल बितरण
-                      </Link>
-                    </h2>
-
-                    {/* Meta Info */}
-                    <div className="flex items-center gap-4 mb-[15px] text-sm font-sans text-[#2b99f8]">
-                      <div className="flex items-center gap-1">
-                        <User className="w-4 h-4" />
-                        <span className="uppercase">RWUA NEPAL</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>January 15, 2020</span>
-                      </div>
-                    </div>
-
-                    <p className="text-base text-[#444444] leading-7 mb-5 font-sans">
-                      Save The Children संस्थाको सहयोगमा न्यानो कम्बल वितरण कार्यक्रम सम्पन्न भएको छ। यस कार्यक्रममा जरुरतमन्द परिवारहरूलाई न्यानो कम्बल वितरण गरिएको थियो। यो कार्यक्रम जाडो मौसममा बिपन्न परिवारहरूलाई न्यानो राख्न सहयोग पुर्याउने उद्देश्यले गरिएको हो।
-                    </p>
-                    <hr className="border-t border-gray-300 mb-4" />
-                    <div className="flex items-center gap-2 text-sm text-gray-500 font-sans">
-                      <div className="flex items-center gap-1">
-                        <Folder className="w-4 h-4" />
-                        <Link href="#" className="no-underline text-[#422673]">Save The Children</Link>
-                      </div>
-                      <div className="flex items-center gap-1 ml-3">
-                        <Tag className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
+                  <p className="block md:hidden p-2 pl-0 pt-1 text-sm text-gray-600">
+                    ग्रामीण महिलाहरूको सशक्तिकरणका लागि आयोजित वार्षिक साधारण सभाको तस्बिरहरू।
+                  </p>
+                </div>
               </div>
             </div>
-            <SaveTheChildrenSidebar />
           </div>
-        </div>
-      </section>
+
+          {/* Latest News Section */}
+          <div className="flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between">
+            <h2 className="font-bold text-3xl text-gray-800">Latest News</h2>
+            <Link href="/news" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group bg-transparent border-2 border-blue-600 hover:border-blue-800 rounded-lg py-2 px-4">
+              View all
+              <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+          <div className="block space-x-0 lg:flex lg:space-x-6">
+            <div className="rounded w-full lg:w-1/3 p-4 lg:p-0 mb-6 lg:mb-0">
+              <div className="rounded-lg shadow-lg overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl cursor-pointer" style={{
+                background: '#ffffff',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06)'
+              }}>
+                <div className="h-48 overflow-hidden">
+                  <Image
+                    src="https://rwua.com.np/wp-content/uploads/2025/12/blimket-780x470-1.png"
+                    alt="कम्बल वितरण"
+                    width={400}
+                    height={250}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4 flex-1 flex flex-col bg-white">
+                  <h2 className="font-bold text-xl text-gray-800 mb-2 line-clamp-2 hover:text-blue-800 transition-colors duration-200 cursor-pointer">
+                    हरिपुरका बिपन्न घरपरिवारलाई न्यानो कम्बल वितरण
+                  </h2>
+                  <p className="text-gray-600 text-sm flex-1 line-clamp-3">
+                    सर्लाहीको हरिपुर नगरपालिकामा सिमान्तकृत दलित तथा मुसहर समुदायलाई लक्षित गरी न्यानो कम्बल वितरण कार्यक्रम सम्पन्न भएको छ।
+                  </p>
+                  <div className="mt-4">
+                    <Link href="/article" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group">
+                      Read more
+                      <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded w-full lg:w-1/3 p-4 lg:p-0 mb-6 lg:mb-0">
+              <div className="rounded-lg shadow-lg overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl cursor-pointer" style={{
+                background: 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)'
+              }}>
+                <div className="h-48 overflow-hidden">
+                  <Image
+                    src="https://rwua.com.np/wp-content/uploads/2025/02/shared-image.jpeg"
+                    alt="बालक्लब"
+                    width={400}
+                    height={250}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4 flex-1 flex flex-col bg-white">
+                  <h2 className="font-bold text-xl text-gray-800 mb-2 line-clamp-2 hover:text-blue-800 transition-colors duration-200 cursor-pointer">
+                    बालक्लब गठन तथा बालबालिकाको अधिकार
+                  </h2>
+                  <p className="text-gray-600 text-sm flex-1 line-clamp-3">
+                    सर्लाहीमा विद्यालयको पहुँचमा पुग्न नसकेका २० जना अपाङ्ग बालबालिकालाई घरमै शिक्षा प्रदान हुने भएको छ।
+                  </p>
+                  <div className="mt-4">
+                    <Link href="/article" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group">
+                      Read more
+                      <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded w-full lg:w-1/3 p-4 lg:p-0 mb-6 lg:mb-0">
+              <div className="rounded-lg shadow-lg overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl cursor-pointer" style={{
+                background: 'linear-gradient(135deg, rgba(243, 232, 255, 0.6) 0%, rgba(219, 234, 254, 0.6) 50%, rgba(224, 231, 255, 0.6) 100%)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)'
+              }}>
+                <div className="h-48 overflow-hidden">
+                  <Image
+                    src="https://rwua.com.np/wp-content/uploads/2020/01/13.jpg"
+                    alt="न्यानो कम्मल"
+                    width={400}
+                    height={250}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4 flex-1 flex flex-col bg-white">
+                  <h2 className="font-bold text-xl text-gray-800 mb-2 line-clamp-2 hover:text-blue-800 transition-colors duration-200 cursor-pointer">
+                    न्यानो कम्मल बितरण कार्यक्रम
+                  </h2>
+                  <p className="text-gray-600 text-sm flex-1 line-clamp-3">
+                    Save The Children संस्थाको सहयोगमा न्यानो कम्बल वितरण कार्यक्रम सम्पन्न भएको छ। यस कार्यक्रममा जरुरतमन्द परिवारहरूलाई न्यानो कम्बल वितरण गरिएको थियो।
+                  </p>
+                  <div className="mt-4">
+                    <Link href="/article" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group">
+                      Read more
+                      <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Newsletter Subscribe Section */}
+          <div className="rounded-lg flex md:shadow-lg mt-12 border border-gray-100 overflow-hidden" style={{
+            background: 'rgba(255, 255, 255, 0.85)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(255, 255, 255, 0.4)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
+          }}>
+            <Image
+              src="https://rwua.com.np/wp-content/uploads/2021/10/1.jpg"
+              alt="Newsletter"
+              width={300}
+              height={200}
+              className="w-0 md:w-1/4 object-cover"
+            />
+            <div className="px-6 py-6 flex-1">
+              <h3 className="text-3xl text-gray-800 font-bold mb-2">समाचार सदस्यता लिनुहोस्</h3>
+              <p className="text-lg text-gray-600 mb-6">
+                हामी हरेक हप्ता नवीनतम समाचार र पोस्टहरू पठाउँछौं
+              </p>
+              <form className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  className="flex-1 rounded-lg bg-gray-50 px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:bg-white focus:ring-blue-500 focus:border-blue-500 text-gray-900"
+                  placeholder="your@email.com"
+                />
+                <button className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group bg-transparent border-2 border-blue-600 hover:border-blue-800 rounded-lg py-2 px-4">
+                  Subscribe
+                  <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </form>
+              <p className="text-green-700 opacity-70 text-sm mt-3">No spam. We promise</p>
+            </div>
+          </div>
+
+          {/* Popular News Section */}
+          <div className="flex mt-16 mb-4 px-4 lg:px-0 items-center justify-between">
+            <h2 className="font-bold text-3xl text-gray-800">Popular News</h2>
+            <Link href="/news" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group bg-transparent border-2 border-blue-600 hover:border-blue-800 rounded-lg py-2 px-4">
+              View all
+              <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+          <div className="block space-x-0 lg:flex lg:space-x-6">
+            <div className="rounded w-full lg:w-1/3 p-4 lg:p-0 mb-6 lg:mb-0">
+              <div className="rounded-lg shadow-lg overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl cursor-pointer" style={{
+                background: 'linear-gradient(135deg, rgba(243, 232, 255, 0.6) 0%, rgba(219, 234, 254, 0.6) 50%, rgba(224, 231, 255, 0.6) 100%)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)'
+              }}>
+                <div className="h-48 overflow-hidden">
+                  <Image
+                    src="https://rwua.com.np/wp-content/uploads/2021/04/11.jpg"
+                    alt="खानेपानी"
+                    width={400}
+                    height={250}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4 flex-1 flex flex-col bg-white">
+                  <h2 className="font-bold text-xl text-gray-800 mb-2 line-clamp-2 hover:text-blue-800 transition-colors duration-200 cursor-pointer">
+                    समावेशी तथा दिगो ग्रामीण खानेपानी सुविधा कार्यक्रम
+                  </h2>
+                  <p className="text-gray-600 text-sm flex-1 line-clamp-3">
+                    स्वच्छ खानेपानी पहुँचका लागि सञ्चालित कार्यक्रमका गतिविधिहरू र समुदायिक सहभागिता।
+                  </p>
+                  <div className="mt-4">
+                    <Link href="/article" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group">
+                      Read more
+                      <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded w-full lg:w-1/3 p-4 lg:p-0 mb-6 lg:mb-0">
+              <div className="rounded-lg shadow-lg overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl cursor-pointer" style={{
+                background: 'linear-gradient(135deg, rgba(243, 232, 255, 0.6) 0%, rgba(219, 234, 254, 0.6) 50%, rgba(224, 231, 255, 0.6) 100%)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)'
+              }}>
+                <div className="h-48 overflow-hidden">
+                  <Image
+                    src="https://rwua.com.np/wp-content/uploads/2021/10/1.jpg"
+                    alt="साधारण सभा"
+                    width={400}
+                    height={250}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4 flex-1 flex flex-col bg-white">
+                  <h2 className="font-bold text-xl text-gray-800 mb-2 line-clamp-2 hover:text-blue-800 transition-colors duration-200 cursor-pointer">
+                    ग्रामिण नारी उत्थान संघको २९ औं साधारण सभा
+                  </h2>
+                  <p className="text-gray-600 text-sm flex-1 line-clamp-3">
+                    ग्रामीण महिलाहरूको सशक्तिकरणका लागि आयोजित वार्षिक साधारण सभाको मुख्य बिन्दुहरू।
+                  </p>
+                  <div className="mt-4">
+                    <Link href="/article" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group">
+                      Read more
+                      <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rounded w-full lg:w-1/3 p-4 lg:p-0 mb-6 lg:mb-0">
+              <div className="rounded-lg shadow-lg overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl cursor-pointer" style={{
+                background: 'linear-gradient(135deg, rgba(243, 232, 255, 0.6) 0%, rgba(219, 234, 254, 0.6) 50%, rgba(224, 231, 255, 0.6) 100%)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255, 255, 255, 0.4)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)'
+              }}>
+                <div className="h-48 overflow-hidden">
+                  <Image
+                    src="https://rwua.com.np/wp-content/uploads/2025/02/shared-image.jpeg"
+                    alt="बाल अधिकार"
+                    width={400}
+                    height={250}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-4 flex-1 flex flex-col bg-white">
+                  <h2 className="font-bold text-xl text-gray-800 mb-2 line-clamp-2 hover:text-blue-800 transition-colors duration-200 cursor-pointer">
+                    बालबालिकाको अधिकार संरक्षण कार्यक्रम
+                  </h2>
+                  <p className="text-gray-600 text-sm flex-1 line-clamp-3">
+                    बालबालिकाको अधिकार संरक्षणका लागि बालक्लब गठन र सचेतना कार्यक्रमहरू।
+                  </p>
+                  <div className="mt-4">
+                    <Link href="/article" className="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 group">
+                      Read more
+                      <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div className="pb-24"></div>
+
+      <style jsx>{`
+        /* Removed unused gallery button styles since we're now using styled links */
+      `}</style>
     </div>
   );
 }
