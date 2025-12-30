@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'rwua.com.np',
         port: '',
-        pathname: '/**',
+        pathname: '/wp-content/uploads/**',
       },
       {
         protocol: 'https',

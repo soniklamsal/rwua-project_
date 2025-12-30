@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Search, Filter } from 'lucide-react';
 
 interface SearchAndFilterProps {
@@ -10,6 +10,7 @@ interface SearchAndFilterProps {
   activeCategory: string;
   placeholder?: string;
   resultsCount?: number;
+  pageType?: 'stories' | 'vacancies';
 }
 
 export default function SearchAndFilter({
@@ -18,15 +19,31 @@ export default function SearchAndFilter({
   categories,
   activeCategory,
   placeholder = "Search...",
-  resultsCount
+  resultsCount,
+  pageType = 'stories'
 }: SearchAndFilterProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
+  // Debounced search function
+  const debounceSearch = useCallback(
+    (query: string) => {
+      const timeoutId = setTimeout(() => {
+        onSearch(query);
+      }, 300);
+      return () => clearTimeout(timeoutId);
+    },
+    [onSearch]
+  );
+
+  useEffect(() => {
+    const cleanup = debounceSearch(searchQuery);
+    return cleanup;
+  }, [searchQuery, debounceSearch]);
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
     setSearchQuery(query);
-    onSearch(query);
   };
 
   const handleCategoryClick = (category: string) => {
@@ -34,15 +51,30 @@ export default function SearchAndFilter({
     setIsFilterOpen(false);
   };
 
+  const getPageContent = () => {
+    if (pageType === 'vacancies') {
+      return {
+        title: 'Career Opportunities',
+        subtitle: 'Join our mission to empower rural communities across Nepal'
+      };
+    }
+    return {
+      title: 'Success Stories',
+      subtitle: 'Inspiring tales of transformation and community empowerment'
+    };
+  };
+
+  const { title, subtitle } = getPageContent();
+
   return (
     <div className="space-y-6">
       {/* Header */}
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          Discover Amazing Content
+          {title}
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Browse through our collection of stories and opportunities
+          {subtitle}
         </p>
       </div>
 
@@ -65,7 +97,7 @@ export default function SearchAndFilter({
           {/* Mobile Filter Toggle */}
           <button
             onClick={() => setIsFilterOpen(!isFilterOpen)}
-            className="md:hidden flex items-center gap-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+            className="md:hidden flex items-center gap-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors cursor-pointer"
           >
             <Filter className="w-4 h-4" />
             Filter
@@ -77,7 +109,7 @@ export default function SearchAndFilter({
               <button
                 key={category}
                 onClick={() => handleCategoryClick(category)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
+                className={`px-4 py-2 rounded-lg transition-colors cursor-pointer ${
                   activeCategory === category
                     ? 'bg-blue-500 text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -98,7 +130,7 @@ export default function SearchAndFilter({
               <button
                 key={category}
                 onClick={() => handleCategoryClick(category)}
-                className={`px-3 py-2 rounded-lg text-sm transition-colors ${
+                className={`px-3 py-2 rounded-lg text-sm transition-colors cursor-pointer ${
                   activeCategory === category
                     ? 'bg-blue-500 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
