@@ -8,11 +8,11 @@ export default function Home() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8">
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6 leading-tight">
+            <h1 className="rwua-display-1 mb-6 leading-tight">
               Empowering Rural
-              <span className="block text-blue-600">Communities</span>
+              <span className="block text-gradient">Communities</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+            <p className="rwua-body-large mb-8 max-w-4xl mx-auto">
               Transforming lives through education, skill development, and sustainable opportunities across Nepal's rural communities.
             </p>
           </div>
@@ -20,18 +20,18 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
               href="/success-story"
-              className="group inline-flex items-center px-8 py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              className="group inline-flex items-center justify-center px-8 py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl font-medium"
             >
               <BookOpen className="w-5 h-5 mr-2" />
-              <span className="font-medium">Success Stories</span>
+              <span>Success Stories</span>
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/vacancy"
-              className="group inline-flex items-center px-8 py-4 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl"
+              className="group inline-flex items-center justify-center px-8 py-4 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl font-medium"
             >
               <Users className="w-5 h-5 mr-2" />
-              <span className="font-medium">Join Our Team</span>
+              <span>Join Our Team</span>
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
@@ -40,19 +40,19 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-gray-600 text-sm">Women Empowered</div>
+              <div className="text-gray-600 text-sm uppercase tracking-wide">Women Empowered</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-              <div className="text-gray-600 text-sm">Communities Served</div>
+              <div className="text-gray-600 text-sm uppercase tracking-wide">Communities Served</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">25+</div>
-              <div className="text-gray-600 text-sm">Programs Running</div>
+              <div className="text-gray-600 text-sm uppercase tracking-wide">Programs Running</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">10+</div>
-              <div className="text-gray-600 text-sm">Years of Impact</div>
+              <div className="text-gray-600 text-sm uppercase tracking-wide">Years of Impact</div>
             </div>
           </div>
         </div>

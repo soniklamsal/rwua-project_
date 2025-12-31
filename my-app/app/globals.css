@@ -37,8 +37,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-lora);
+  --font-display: var(--font-playfair);
+  --font-heading: var(--font-poppins);
   
   /* RWUA Custom Colors */
   --color-rwua-primary: var(--rwua-primary);
@@ -61,19 +63,40 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  font-family: var(--font-inter), 'Inter', 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
 }
 
-/* RWUA Typography with responsive scaling */
+/* Enhanced RWUA Typography with Google Fonts */
+.rwua-display-1 {
+  font-family: var(--font-playfair), 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--rwua-neutral-900);
+  letter-spacing: -0.02em;
+}
+
+.rwua-display-2 {
+  font-family: var(--font-playfair), 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--rwua-neutral-800);
+  letter-spacing: -0.01em;
+}
+
 .rwua-heading-1 {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.2;
   color: var(--rwua-neutral-800);
+  letter-spacing: -0.01em;
 }
 
 .rwua-heading-2 {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   line-height: 1.3;
@@ -81,24 +104,86 @@ body {
 }
 
 .rwua-heading-3 {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 600;
   line-height: 1.4;
   color: var(--rwua-neutral-700);
 }
 
+.rwua-heading-4 {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--rwua-neutral-700);
+}
+
 .rwua-body {
+  font-family: var(--font-inter), 'Inter', sans-serif;
   font-size: clamp(0.875rem, 2vw, 1rem);
   font-weight: 400;
   line-height: 1.6;
   color: var(--rwua-neutral-600);
 }
 
+.rwua-body-large {
+  font-family: var(--font-lora), 'Lora', serif;
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--rwua-neutral-600);
+}
+
 .rwua-body-small {
+  font-family: var(--font-inter), 'Inter', sans-serif;
   font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   font-weight: 400;
   line-height: 1.5;
   color: var(--rwua-neutral-500);
+}
+
+.rwua-caption {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: clamp(0.625rem, 1.2vw, 0.75rem);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--rwua-neutral-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rwua-quote {
+  font-family: var(--font-lora), 'Lora', serif;
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--rwua-neutral-700);
+  font-style: italic;
+}
+
+/* Button and interactive text styles */
+.rwua-button-text {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.rwua-link-text {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 500;
+  color: var(--rwua-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.rwua-link-text:hover {
+  color: var(--rwua-primary-dark);
+  text-decoration-thickness: 2px;
 }
 
 /* Responsive utilities */
@@ -231,25 +316,48 @@ select:focus-visible {
   border-radius: 4px;
 }
 
-/* High contrast button styles */
+/* High contrast button styles with enhanced typography */
 .btn-primary {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   background-color: var(--rwua-primary);
   color: white;
   border: 2px solid var(--rwua-primary);
   padding: 0.75rem 1.5rem;
   border-radius: 0.375rem;
   font-weight: 500;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+  letter-spacing: 0.01em;
   transition: all 0.2s ease-in-out;
 }
 
 .btn-primary:hover {
   background-color: var(--rwua-primary-dark);
   border-color: var(--rwua-primary-dark);
+  transform: translateY(-1px);
 }
 
 .btn-primary:focus-visible {
   outline: 2px solid var(--rwua-primary);
   outline-offset: 2px;
+}
+
+.btn-secondary {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  background-color: transparent;
+  color: var(--rwua-primary);
+  border: 2px solid var(--rwua-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: var(--rwua-primary);
+  color: white;
+  transform: translateY(-1px);
 }
 
 /* Improved color contrast for text */
@@ -287,4 +395,53 @@ select:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Typography utility classes */
+.font-display {
+  font-family: var(--font-playfair), 'Playfair Display', serif;
+}
+
+.font-heading {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-lora), 'Lora', serif;
+}
+
+/* Text decoration utilities */
+.text-gradient {
+  background: linear-gradient(135deg, var(--rwua-primary), var(--rwua-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced focus and hover states for text elements */
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 2rem;
+}
+
+/* Smooth text rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
